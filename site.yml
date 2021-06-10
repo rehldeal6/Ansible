@@ -5,6 +5,10 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: hostname | Set the hostname
+      hostname:
+        name: "{{ inventory_hostname }}"
+
     - name: group | create group
       group:
         name: jim
@@ -24,4 +28,3 @@
         user: jim
         key: "{{ item }}"
       loop: "{{ authorized_keys }}"
-
