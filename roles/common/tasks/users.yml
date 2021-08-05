@@ -1,0 +1,21 @@
+- name: group | create group
+  group:
+    name: "{{ item.name }}"
+  loop: "{{ local_users }}"
+
+- name: user | create users
+  user:
+    name: "{{ item.name }}"
+    groups: "{{ item.admin | default(false) | ternary('sudo','') }}"
+    append: yes
+    state: present
+    createhome: yes
+    shell: /bin/bash
+    password: "{{ item.password }}"
+  loop: "{{ local_users }}"
+
+- name: authorized_key | Deploy authorized_key
+  authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.ssh_keys | join('\n') }}"
+  loop: "{{ local_users }}"

@@ -1,0 +1,7 @@
+---
+
+- name: apt | Install basic packages
+  apt:
+    name:
+      - vim
+    state: latest 

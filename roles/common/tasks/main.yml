@@ -1,0 +1,10 @@
+---
+
+- import_tasks: hostname.yml
+  tags: hostname
+
+- import_tasks: users.yml
+  tags: users
+
+- import_tasks: packages.yml
+  tags: packages
