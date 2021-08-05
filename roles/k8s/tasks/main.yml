@@ -1,0 +1,7 @@
+---
+
+- import_tasks: prereqs.yml
+  tags: k8s_prereqs
+
+- import_tasks: node_labels.yml
+  tags: k8s_node_labels

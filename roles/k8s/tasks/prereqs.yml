@@ -1,0 +1,13 @@
+---
+
+- name: apt | Install basic packages
+  apt:
+    name:
+      - python3-pip
+    state: latest 
+
+- name: pip | install required pip packages
+  pip:
+    name:
+      - kubernetes
+      - openshift

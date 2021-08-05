@@ -6,3 +6,8 @@
   become_method: sudo
   roles:
     - common
+
+- hosts: k8s_master[0]
+  roles:
+    - k8s
+  tags: k8s

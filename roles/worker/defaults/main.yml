@@ -1,4 +1,0 @@
-glusterfs_client_modules:
-  - dm_snapshot
-  - dm_mirror
-  - dm_thin_pool
