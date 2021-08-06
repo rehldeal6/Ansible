@@ -7,7 +7,7 @@
   roles:
     - common
 
-- hosts: k8s_master[0]
+- hosts: localhost
   roles:
     - k8s
   tags: k8s
